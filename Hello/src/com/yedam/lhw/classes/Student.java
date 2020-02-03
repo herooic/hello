@@ -73,6 +73,11 @@ public class Student {
 		this.height = height;
 	}
 
+	@Override
+	public String toString() {
+		return "Student [이름은=" + name + ", 나이는=" + age + ", 키는=" + height + ", 몸무게는=" + weight + "]";
+	}
+
 	public int getWeight() {
 		return weight;
 	}
