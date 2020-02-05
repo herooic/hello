@@ -1,11 +1,12 @@
-package com.yedam.lhw.interFace.control;
+package com.yedam.lhw.interfaces.control;
 
 import java.util.Scanner;
 
-import com.yedam.lhw.interFace.impl.EmpServiceImpl;
-import com.yedam.lhw.interFace.impl.EmpServiceImpl2;
-import com.yedam.lhw.interFace.model.EmpService;
-import com.yedam.lhw.interFace.model.Employee;
+import com.yedam.lhw.interfaces.impl.EmpServiceImpl;
+import com.yedam.lhw.interfaces.impl.EmpServiceImpl2;
+import com.yedam.lhw.interfaces.model.EmpService;
+import com.yedam.lhw.interfaces.model.Employee;
+import com.yedam.lhw.interfaces.model.Employees;
 
 public class EmpProc {
 	Employee[] employees = new Employee[10];
@@ -16,9 +17,9 @@ public class EmpProc {
 	public void execute() {
 		System.out.println("프로그램 시작. ");
 		while (true) {
-			System.out.println("=============================");
-			System.out.println("1.추가2.조회3.리스트4.삭제5.종료");
-			System.out.println("=============================");
+			System.out.println("==========================================");
+			System.out.println("1.추가2.조회3.리스트4.삭제 5.종료 6.디비조회 7.디비입력");
+			System.out.println("===========================================");
 			System.out.println("선택 > ");
 			int menu = scn.nextInt();
 			scn.nextLine();
@@ -43,12 +44,29 @@ public class EmpProc {
 
 			} else if (menu == 4) {
 				System.out.println("사워번호 입력");
-				int no = scn.nextInt() ;
+				int no = scn.nextInt();
 				service.delEmp(no, employees);
 
 			} else if (menu == 5) {
 
 				break;
+
+			} else if (menu == 6) {
+				service.searchEmployees();
+			} else if(menu == 7) {
+				System.out.println("last 입력");
+				String lastName = scn.nextLine();
+				System.out.println("이메일 입력");
+				String email = scn.nextLine();
+				System.out.println("업무입력");
+				String jobId = scn.nextLine();
+				Employees emp = new Employees();		
+				emp.setLastName(lastName);
+				emp.setEmail(email);
+				emp.setJobId(jobId);
+				
+				service.insertEmployees(emp);
+			
 			}
 
 		}

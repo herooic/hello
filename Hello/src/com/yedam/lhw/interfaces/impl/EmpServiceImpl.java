@@ -1,7 +1,8 @@
-package com.yedam.lhw.interFace.impl;
+package com.yedam.lhw.interfaces.impl;
 
-import com.yedam.lhw.interFace.model.EmpService;
-import com.yedam.lhw.interFace.model.Employee;
+import com.yedam.lhw.interfaces.model.EmpService;
+import com.yedam.lhw.interfaces.model.Employee;
+import com.yedam.lhw.interfaces.model.Employees;
 
 public class EmpServiceImpl implements EmpService {
 
@@ -48,6 +49,27 @@ public class EmpServiceImpl implements EmpService {
 				emps[i] = null;
 			}
 		}
+	}
+
+	@Override
+	public void searchEmployees() {
+		// TODO Auto-generated method stub
+		System.out.println(" 디비조회 ");
+		EmpDAO dao = new EmpDAO();
+		Employees[] empArray = dao.getEmployees();
+		for (Employees emp : empArray) {
+			if (emp != null) {
+				System.out.println(emp);
+			}
+		}
+
+	}
+	@Override
+	public void insertEmployees(Employees emp) {
+		System.out.println("디비 입력 기능 ");
+		EmpDAO dao = new EmpDAO();
+		dao.insertEmployees(emp);
+
 	}
 
 }

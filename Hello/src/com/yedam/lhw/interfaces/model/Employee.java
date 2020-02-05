@@ -1,4 +1,4 @@
-package com.yedam.lhw.interFace.model;
+package com.yedam.lhw.interfaces.model;
 
 public class Employee {
 	String name;

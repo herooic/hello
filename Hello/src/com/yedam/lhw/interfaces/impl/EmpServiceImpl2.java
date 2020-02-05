@@ -1,7 +1,7 @@
-package com.yedam.lhw.interFace.impl;
+package com.yedam.lhw.interfaces.impl;
 
-import com.yedam.lhw.interFace.model.EmpService;
-import com.yedam.lhw.interFace.model.Employee;
+import com.yedam.lhw.interfaces.model.EmpService;
+import com.yedam.lhw.interfaces.model.Employee;
 
 public class EmpServiceImpl2 implements EmpService {
 
@@ -28,5 +28,6 @@ public class EmpServiceImpl2 implements EmpService {
 		// TODO Auto-generated method stub
 		System.out.println(" 더 좋은 삭제기능 ");
 	}
+	
 
 }

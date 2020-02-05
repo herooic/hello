@@ -1,4 +1,4 @@
-package com.yedam.lhw.interFace.model;
+package com.yedam.lhw.interfaces.model;
 
 public interface EmpService { // 기능정의
 	// 저장기능
@@ -13,4 +13,10 @@ public interface EmpService { // 기능정의
 	// 삭제
 	public void delEmp(int empNo, Employee[] emps );
 
+	//디비 연결 조회 기능
+	public void searchEmployees();
+	
+	//디비입력기능  
+	public void insertEmployees(Employees emp);
+	
 }
