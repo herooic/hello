@@ -1,5 +1,7 @@
 package com.yedam.lhw.interfaces.impl;
 
+import java.util.List;
+
 import com.yedam.lhw.interfaces.model.EmpService;
 import com.yedam.lhw.interfaces.model.Employee;
 import com.yedam.lhw.interfaces.model.Employees;
@@ -64,6 +66,7 @@ public class EmpServiceImpl implements EmpService {
 		}
 
 	}
+
 	@Override
 	public void insertEmployees(Employees emp) {
 		System.out.println("디비 입력 기능 ");
@@ -72,4 +75,37 @@ public class EmpServiceImpl implements EmpService {
 
 	}
 
+	@Override
+	public List<Employees> getDBEmployees() {
+		// TODO Auto-generated method stub
+		EmpDAO dao = new EmpDAO();
+//		List<Employees> list = dao.getEmpList();
+		return dao.getEmpList();
+	}
+
+	@Override
+	public Employees getDBEmployee(int empId) {
+		EmpDAO dao = new EmpDAO();
+		return dao.getEmployees(empId);
+	}
+
+	@Override
+	public void inserDBEmp(Employees emp) {
+		// TODO Auto-generated method stub
+
+	}
+
+	
+	@Override
+	public void updateDBEmp(Employees emp) {
+	
+		EmpDAO dao = new EmpDAO();
+		dao.updateEmployees(emp);
+	}
+	
+	@Override
+	public void deleteDBEmp(Employees emp) {
+		EmpDAO dao = new EmpDAO();
+		dao.deleteEmployees(emp);
+	}
 }

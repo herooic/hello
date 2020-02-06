@@ -1,5 +1,7 @@
 package com.yedam.lhw.interfaces.model;
 
+import java.util.List;
+
 public interface EmpService { // 기능정의
 	// 저장기능
 	public void addEmp(Employee emp, Employee[] emps);
@@ -18,5 +20,29 @@ public interface EmpService { // 기능정의
 	
 	//디비입력기능  
 	public void insertEmployees(Employees emp);
+	
+	// ==> 콜랙션 활용하여  디비 처리 
+	//1. 전체 데이터 조회
+	public List<Employees> getDBEmployees();
+	
+	//2. 한건 조회.
+	public Employees getDBEmployee(int empId);
+	
+	
+	//3. 입력
+	public void inserDBEmp(Employees emp);
+	
+	//4. 수정 
+	public void updateDBEmp(Employees emp);
+	
+	//5.삭제 
+	public void deleteDBEmp(Employees emp);
+	
+	
+//	public 
+	
+	
+	
+	
 	
 }
